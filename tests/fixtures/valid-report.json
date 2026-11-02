@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "tool": { "name": "kvkk-audit", "version": "0.1.0" },
+  "generatedAt": "2026-11-01T10:00:00.000Z",
+  "language": "tr",
+  "mode": "summary",
+  "project": { "name": "demo-shop", "role": "controller", "roleAssumed": true, "applicability": "likely" },
+  "verdict": "fixes_needed",
+  "summary": "Demo summary.",
+  "dataInventory": [
+    { "category": "contact", "fields": ["email", "phone"], "specialCategory": false, "locations": ["src/models/user.js"] }
+  ],
+  "findings": [
+    {
+      "id": "F-001",
+      "ruleId": "KVKK-LOG-001",
+      "title": "Personal data in logs",
+      "severity": "medium",
+      "certainty": "needs_verification",
+      "legalRefs": [{ "label": "KVKK md. 12", "url": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6698.pdf" }],
+      "description": "Email is logged.",
+      "recommendation": "Mask personal data in logs.",
+      "occurrences": [
+        { "file": "src/auth.js", "line": 42, "snippet": "console.log(user.email)" },
+        { "file": "src/auth.js", "line": 57 }
+      ],
+      "occurrenceCount": 2
+    }
+  ],
+  "crossBorder": {
+    "services": [
+      {
+        "name": "Google Analytics",
+        "dataTypes": ["usage"],
+        "evidence": [{ "file": "src/index.html", "line": 10 }],
+        "specialCategoryEvidence": false
+      }
+    ]
+  },
+  "checklist": [
+    {
+      "id": "CK-001",
+      "question": "Is a VERBIS registration in place?",
+      "legalRefs": [{ "label": "KVKK md. 16", "url": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6698.pdf" }],
+      "status": "unknown"
+    }
+  ],
+  "disclaimer": "This report is not legal advice (hukuki görüş değildir)."
+}

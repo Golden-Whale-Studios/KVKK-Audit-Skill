@@ -1,0 +1,10 @@
+{
+  "expectedVerdict": "serious_risk",
+  "mustFind": [
+    { "ruleId": "KVKK-PD-001", "file": "app/models.py" },
+    { "ruleId": "KVKK-SP-001", "file": "app/models.py" },
+    { "ruleId": "KVKK-SEC-004" },
+    { "ruleId": "KVKK-XB-001", "file": "app/storage.py", "severity": "high" }
+  ],
+  "mustNotFind": ["KVKK-SEC-001", "KVKK-SEC-003"]
+}

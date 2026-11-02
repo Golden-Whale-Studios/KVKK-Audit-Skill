@@ -1,0 +1,9 @@
+---
+description: KVKK (Turkish data protection law) audit of the codebase. Use when the user asks for a KVKK audit, a Turkish data protection review, "can I launch in Turkey?", "KVKK denetimi" or "kişisel veri denetimi".
+alwaysApply: false
+---
+
+To run a KVKK audit, read `skills/kvkk-audit/SKILL.md` and follow it step by step, including
+`skills/kvkk-audit/references/workflow.md`. The skill directory is `skills/kvkk-audit/` (or wherever
+the `kvkk-audit` skill is installed in this project). Do not audit from memory: the rules, the
+report format and the disclaimer are defined only in the skill files.

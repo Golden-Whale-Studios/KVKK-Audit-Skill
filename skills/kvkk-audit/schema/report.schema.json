@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kvkk-audit/report.schema.json",
+  "title": "KVKK Audit Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "tool", "generatedAt", "language", "mode", "project", "verdict", "summary", "dataInventory", "findings", "crossBorder", "checklist", "disclaimer"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": { "name": { "type": "string" }, "version": { "type": "string" } }
+    },
+    "generatedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}" },
+    "language": { "type": "string", "minLength": 2 },
+    "mode": { "enum": ["summary", "detailed"] },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "role", "roleAssumed", "applicability"],
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "enum": ["controller", "processor"] },
+        "roleAssumed": { "type": "boolean" },
+        "applicability": { "enum": ["applies", "likely", "unclear"] }
+      }
+    },
+    "verdict": { "enum": ["serious_risk", "fixes_needed", "looks_ready"] },
+    "summary": { "type": "string" },
+    "dataInventory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["category", "fields", "specialCategory", "locations"],
+        "properties": {
+          "category": { "type": "string" },
+          "fields": { "type": "array", "items": { "type": "string" } },
+          "specialCategory": { "type": "boolean" },
+          "locations": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } },
+    "crossBorder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["services"],
+      "properties": {
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "dataTypes", "evidence", "specialCategoryEvidence"],
+            "properties": {
+              "name": { "type": "string" },
+              "dataTypes": { "type": "array", "items": { "type": "string" } },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["file", "line"],
+                  "properties": { "file": { "type": "string" }, "line": { "type": "integer", "minimum": 0 } }
+                }
+              },
+              "specialCategoryEvidence": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "checklist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "question", "legalRefs", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "question": { "type": "string" },
+          "legalRefs": { "type": "array", "items": { "$ref": "#/$defs/legalRef" } },
+          "status": { "enum": ["unknown", "yes", "no"] }
+        }
+      }
+    },
+    "disclaimer": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "legalRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "url"],
+      "properties": { "label": { "type": "string" }, "url": { "type": "string" } }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "ruleId", "title", "severity", "certainty", "legalRefs", "description", "recommendation", "occurrences", "occurrenceCount"],
+      "properties": {
+        "id": { "type": "string" },
+        "ruleId": { "type": "string" },
+        "title": { "type": "string" },
+        "severity": { "enum": ["critical", "high", "medium", "low", "info"] },
+        "certainty": { "enum": ["confirmed", "needs_verification"] },
+        "legalRefs": { "type": "array", "items": { "$ref": "#/$defs/legalRef" } },
+        "description": { "type": "string" },
+        "recommendation": { "type": "string" },
+        "occurrences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["file", "line"],
+            "properties": {
+              "file": { "type": "string" },
+              "line": { "type": "integer", "minimum": 0 },
+              "snippet": { "type": "string" }
+            }
+          }
+        },
+        "occurrenceCount": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

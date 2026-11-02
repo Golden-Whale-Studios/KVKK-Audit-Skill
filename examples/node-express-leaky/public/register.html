@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Register</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FAKE000000"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('config', 'G-FAKE000000');
+  </script>
+</head>
+<body>
+  <form method="post" action="/auth/register">
+    <input name="tckn" placeholder="TCKN (e.g. 10000000146)">
+    <input name="email" type="email" placeholder="user@example.com">
+    <input name="phone" placeholder="+90 555 000 00 00">
+    <input name="password" type="password">
+    <label><input type="checkbox" name="acceptAll" checked>
+      I accept the terms, the privacy notice, the KVKK explicit consent and commercial messages.</label>
+    <button>Sign up</button>
+  </form>
+</body>
+</html>

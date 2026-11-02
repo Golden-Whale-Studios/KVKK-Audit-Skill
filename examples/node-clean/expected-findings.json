@@ -1,0 +1,8 @@
+{
+  "expectedVerdict": "looks_ready",
+  "mustFind": [],
+  "mustNotFind": [
+    "KVKK-LOG-001", "KVKK-RET-001", "KVKK-SEC-001", "KVKK-SEC-002", "KVKK-SEC-003", "KVKK-SEC-004",
+    "KVKK-SP-001", "KVKK-CK-001", "KVKK-CON-001", "KVKK-NOT-001", "KVKK-RET-002"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "expectedVerdict": "fixes_needed",
+  "mustFind": [
+    { "ruleId": "KVKK-LOG-001", "file": "app/src/main/java/com/example/fakeapp/MainActivity.kt" },
+    { "ruleId": "KVKK-CK-001" },
+    { "ruleId": "KVKK-XB-001" }
+  ],
+  "mustNotFind": ["KVKK-SEC-001", "KVKK-SEC-003", "KVKK-SEC-004"]
+}

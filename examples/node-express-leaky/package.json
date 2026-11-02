@@ -1,0 +1,7 @@
+{
+  "name": "node-express-leaky",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Intentionally non-compliant KVKK test material",
+  "dependencies": { "express": "^4.19.0", "@sentry/node": "^8.0.0" }
+}

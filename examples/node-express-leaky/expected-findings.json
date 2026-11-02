@@ -1,0 +1,17 @@
+{
+  "expectedVerdict": "serious_risk",
+  "mustFind": [
+    { "ruleId": "KVKK-PD-001", "file": "src/routes/auth.js" },
+    { "ruleId": "KVKK-CON-001" },
+    { "ruleId": "KVKK-IYS-001" },
+    { "ruleId": "KVKK-NOT-001" },
+    { "ruleId": "KVKK-LOG-001", "file": "src/routes/auth.js" },
+    { "ruleId": "KVKK-SEC-001", "file": "src/routes/auth.js" },
+    { "ruleId": "KVKK-SEC-002", "file": "src/config.js" },
+    { "ruleId": "KVKK-SEC-003", "file": "src/config.js" },
+    { "ruleId": "KVKK-XB-001" },
+    { "ruleId": "KVKK-CK-001", "file": "public/register.html" },
+    { "ruleId": "KVKK-RET-002" }
+  ],
+  "mustNotFind": []
+}

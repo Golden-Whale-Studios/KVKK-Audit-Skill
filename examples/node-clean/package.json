@@ -1,0 +1,7 @@
+{
+  "name": "node-clean",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Compliant-by-design KVKK test material",
+  "dependencies": { "express": "^4.19.0", "bcrypt": "^5.1.1", "node-cron": "^3.0.3" }
+}

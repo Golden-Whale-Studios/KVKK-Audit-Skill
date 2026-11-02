@@ -1,0 +1,20 @@
+{
+  "name": "kvkk-audit-skill",
+  "version": "0.1.0",
+  "description": "Agent Skill that audits codebases for Turkish data-protection law (KVKK)",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Golden-Whale-Studios/KVKK-Audit-Skill.git"
+  }
+}

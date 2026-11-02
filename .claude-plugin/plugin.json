@@ -1,0 +1,19 @@
+{
+  "name": "kvkk-audit",
+  "version": "0.1.0",
+  "description": "Audits a codebase for KVKK (Turkish personal data protection law, No. 6698) and reports whether the app looks ready to launch in Turkey. Technical pre-screen, not legal advice.",
+  "author": {
+    "name": "Golden Whale Studios"
+  },
+  "homepage": "https://github.com/Golden-Whale-Studios/KVKK-Audit-Skill",
+  "repository": "https://github.com/Golden-Whale-Studios/KVKK-Audit-Skill",
+  "license": "MIT",
+  "keywords": [
+    "kvkk",
+    "privacy",
+    "data-protection",
+    "turkey",
+    "compliance",
+    "audit"
+  ]
+}
